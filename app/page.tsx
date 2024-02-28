@@ -8,7 +8,7 @@ export default function Home() {
 
   useEffect(() => {
     getProducts();
-    console.log(products);
+    // console.log(products);
   }, [getProducts]);
   return <main>home</main>;
 }
