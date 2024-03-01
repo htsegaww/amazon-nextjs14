@@ -1,15 +1,9 @@
-"use client";
-import { useAppSelector } from "@/hooks/redux";
-import { getCart } from "@/store/cartSlice";
-import { Product } from "@/types/supabase";
+import Cart from "../components/shared/Cart";
 
 const CartPage = () => {
-  const cart = useAppSelector(getCart);
   return (
     <div>
-      {cart.map((item: Product) => {
-        return <div key={item.id}>{item.title}</div>;
-      })}
+      <Cart />
     </div>
   );
 };
