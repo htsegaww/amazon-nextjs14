@@ -11,7 +11,7 @@ const Ratings = ({ rating }: { rating: any }) => {
         <Image alt="start" src="/star-icon.png" height={20} width={20} />
         <Image alt="start" src="/star-icon.png" height={20} width={20} />
       </div>
-      <div className="font-bold text-[#a4c4cc] hover:text-orange-500">
+      <div className="font-bold text-[#017085] hover:text-orange-500">
         {rating.count}
       </div>
     </div>

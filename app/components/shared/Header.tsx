@@ -43,7 +43,7 @@ const Header = () => {
         </div>
       </header>
 
-      <div className="bg-[#22303e] text-white px-3 flex items-center justify-between text-sm p-2">
+      <div className="bg-[#22303e] text-white px-3 flex items-center justify-between text-sm p-6">
         <HeaderLink href="/all">
           <div className="flex items-center hover:text-orange-400">
             <Menu />
