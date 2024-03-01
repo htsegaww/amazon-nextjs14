@@ -12,10 +12,14 @@ import InStock from "./InStock";
 import CustomButton from "./CustomButton";
 import { useRouter } from "next/navigation";
 
-const ProductDetails = ({ product }: { product: Product[] }) => {
+import { addToCart } from "@/store/cartSlice";
+import { useAppDispatch } from "@/hooks/redux";
+
+const ProductDetails = ({ product }: { product: any[] }) => {
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(1);
   const router = useRouter();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     setHours(getRandomNumber(12));
@@ -107,7 +111,10 @@ const ProductDetails = ({ product }: { product: Product[] }) => {
                       width: "100%",
                       borderRadius: "20px",
                     }}
-                    onClick={() => router.push("/cart")}
+                    onClick={() => {
+                      dispatch(addToCart(prod));
+                      router.push("/cart");
+                    }}
                   >
                     ADD TO CART
                   </CustomButton>

@@ -1,7 +1,18 @@
+"use client";
+import { useAppSelector } from "@/hooks/redux";
+import { getCart } from "@/store/cartSlice";
+import { Product } from "@/types/supabase";
 import React from "react";
 
 const CartPage = () => {
-  return <div>CartPage</div>;
+  const cart = useAppSelector(getCart);
+  return (
+    <div>
+      {cart.map((item: Product) => {
+        <div key={item.id}>{item.image}</div>;
+      })}
+    </div>
+  );
 };
 
 export default CartPage;
